@@ -162,7 +162,7 @@ const sendVerifyRequest = async (artifact, options) => {
   try {
     logger.debug('Sending verify request with POST arguments:')
     logger.debug(JSON.stringify(postQueries, null, 2))
-    return await axios.get(options.apiUrl, querystring.stringify(postQueries))
+    return await axios.post(options.apiUrl, querystring.stringify(postQueries))
   } catch (error) {
     logger.debug(error.message)
     throw new Error(`Failed to connect to Etherscan API at url ${options.apiUrl}`)
