@@ -293,7 +293,7 @@ const verificationStatus = async (guid, options) => {
         action: 'checkverifystatus',
         guid
       })
-      const verificationResult = await axios.get(`${options.apiUrl}?${qs}`)
+      const verificationResult = await axios.post(`${options.apiUrl}?${qs}`)
       if (verificationResult.data.result !== VerificationStatus.PENDING) {
         return verificationResult.data.result
       }
