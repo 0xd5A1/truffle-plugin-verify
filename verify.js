@@ -148,7 +148,7 @@ const sendVerifyRequest = async (artifact, options) => {
   const relativeFilePath = artifact.ast.absolutePath.replace('project:', '')
 
   const postQueries = {
-    apikey: options.apiKey,
+    // apikey: options.apiKey,
     module: 'contract',
     action: 'verifysourcecode',
     contractaddress: artifact.networks[`${options.networkId}`].address,
