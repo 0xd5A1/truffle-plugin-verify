@@ -150,7 +150,7 @@ const sendVerifyRequest = async (artifact, options) => {
   const postQueries = {
     // apikey: options.apiKey,
     module: 'contract',
-    action: 'verifysourcecode',
+    action: 'verify',
     contractaddress: artifact.networks[`${options.networkId}`].address,
     sourceCode: JSON.stringify(inputJSON),
     codeformat: 'solidity-standard-json-input',
