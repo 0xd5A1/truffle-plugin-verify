@@ -162,7 +162,7 @@ const sendVerifyRequest = async (artifact, options) => {
   try {
     logger.debug('Sending verify request with POST arguments:')
     logger.debug(JSON.stringify(postQueries, null, 2))
-    return await axios.post(options.apiUrl, querystring.stringify(postQueries))
+    return await axios.get(options.apiUrl, querystring.stringify(postQueries))
   } catch (error) {
     logger.debug(error.message)
     throw new Error(`Failed to connect to Etherscan API at url ${options.apiUrl}`)
@@ -184,7 +184,7 @@ const fetchConstructorValues = async (artifact, options) => {
   let res
   try {
     const qs = querystring.stringify({
-      apiKey: options.apiKey,
+    //   apiKey: options.apiKey,
       module: 'account',
       action: 'txlist',
       address: contractAddress,
@@ -288,7 +288,7 @@ const verificationStatus = async (guid, options) => {
 
     try {
       const qs = querystring.stringify({
-        apiKey: options.apiKey,
+        // apiKey: options.apiKey,
         module: 'contract',
         action: 'checkverifystatus',
         guid
